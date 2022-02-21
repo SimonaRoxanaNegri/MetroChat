@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ca-menu',
@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 
 })
-export class MenuComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class MenuComponent {
+  link_menu1: string;
+  link_menu2: string;
+  link_menu3: string;
+  constructor() {
+    this.link_menu1 = 'Treni';
+    this.link_menu2 = 'Preferiti';
+    this.link_menu3 = 'Login';
   }
-
 }
