@@ -12,3 +12,4 @@ export class TreniComponent {
     { idt: 'BFD', linea: 'Gialla', numchatting: 47, tempo: 155000 }
   ];
 }
+
