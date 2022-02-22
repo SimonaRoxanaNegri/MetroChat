@@ -1,9 +1,11 @@
 <div class="listatreni">
-  <ul>
+  <ca-metro *ngFor="let metro of listametro" [datiIn]="metro">
+  </ca-metro>
+  <!-- <ul>
     <li *ngFor="let metro of listametro">
       <h2>{{metro.linea}}</h2>
       <p>ID: {{metro.idt}}</p>
       <p>Partenza tra: {{metro.tempo}}</p>
     </li>
-  </ul>
+  </ul> -->
 </div>

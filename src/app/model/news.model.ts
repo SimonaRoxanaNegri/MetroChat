@@ -1,5 +1,9 @@
-export type News = {
-    id: number;
-    titolo: string;
-    descrizione: string
+export class News {
+    constructor(
+        public id: number,
+        public titolo: string,
+        public descrizione: string,
+        public datapubb?: string
+    ) { }
+
 }

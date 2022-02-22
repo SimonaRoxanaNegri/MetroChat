@@ -4,8 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { TreniComponent } from './treni/treni.component';
-import { MmssPipe } from './mmss.pipe';
+import { MmssPipe } from './pipe/mmss.pipe';
 import { ListanewsComponent } from './listanews/listanews.component';
+import { MetroComponent } from './metro/metro.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ListanewsComponent } from './listanews/listanews.component';
     MenuComponent,
     TreniComponent,
     MmssPipe,
-    ListanewsComponent
+    ListanewsComponent,
+    MetroComponent
   ],
   imports: [
     BrowserModule
