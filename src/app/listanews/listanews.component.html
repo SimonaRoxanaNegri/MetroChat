@@ -1,4 +1,5 @@
-<div class="news">
+<div class="news" *ngIf="showHidden">
+  <h3>Utente: {{user}}</h3>
   <ul>
     <li *ngFor="let notizia of listanews" (click)="dettaglio(notizia.id)">
       <h2>{{notizia.titolo}}</h2>
@@ -6,3 +7,5 @@
     </li>
   </ul>
 </div>
+<p>Mostra o nascondi la lista delle news!</p>
+<button (click)="showOrHideListOfNews()">Mostra/Nascondi</button>

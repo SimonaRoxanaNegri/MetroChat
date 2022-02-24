@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { News } from './../model/news.model';
 @Component({
   selector: 'ca-listanews',
@@ -9,6 +9,9 @@ import { News } from './../model/news.model';
 export class ListanewsComponent {
 
   listanews: News[] = [];
+  @Input() user?: string;
+  showHidden: boolean = false;
+
   constructor() {
     this.listanews = [
       {
@@ -26,5 +29,11 @@ export class ListanewsComponent {
 
   dettaglio(id: number) {
     alert("id Notizia:" + id);
+  }
+
+  showOrHideListOfNews(): boolean {
+    console.log("ciao")
+    this.showHidden = !this.showHidden;
+    return this.showHidden;
   }
 }
