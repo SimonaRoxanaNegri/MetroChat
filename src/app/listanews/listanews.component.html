@@ -1,5 +1,6 @@
-<div class="news" *ngIf="showHidden">
+<div class="news" *ngIf="showHidden" [style.color]="color">
   <h3>Utente: {{user}}</h3>
+  <p>{{today | date: 'dd EEEE MMMM yyyy HH:mm:ss'}}</p>
   <ul>
     <li *ngFor="let notizia of listanews" (click)="dettaglio(notizia.id)">
       <h2>{{notizia.titolo}}</h2>
@@ -9,3 +10,7 @@
 </div>
 <p>Mostra o nascondi la lista delle news!</p>
 <button (click)="showOrHideListOfNews()">Mostra/Nascondi</button>
+<select (change)="changeColor(field)" #field>
+  <option value="1">Rosso</option>
+  <option value="2">Blu</option>
+</select>

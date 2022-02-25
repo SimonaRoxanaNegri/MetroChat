@@ -1,3 +1,4 @@
+import { getLocaleDateFormat } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { News } from './../model/news.model';
 @Component({
@@ -11,6 +12,8 @@ export class ListanewsComponent {
   listanews: News[] = [];
   @Input() user?: string;
   showHidden: boolean = false;
+  today: Date;
+  color: string;
 
   constructor() {
     this.listanews = [
@@ -25,6 +28,8 @@ export class ListanewsComponent {
         descrizione: 'descrizione notizia 2'
       },
     ];
+    this.today = new Date();
+    this.color = 'black';
   }
 
   dettaglio(id: number) {
@@ -32,8 +37,17 @@ export class ListanewsComponent {
   }
 
   showOrHideListOfNews(): boolean {
-    console.log("ciao")
     this.showHidden = !this.showHidden;
     return this.showHidden;
+  }
+
+  changeColor(field: HTMLSelectElement): string {
+    if (field.value == '1')
+      return this.color = 'red';
+    else if (field.value == '2') {
+      return this.color = 'blue'
+    } else {
+      return this.color = 'black'
+    }
   }
 }
