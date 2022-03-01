@@ -7,6 +7,7 @@ import { TreniComponent } from './treni/treni.component';
 import { MmssPipe } from './mmss.pipe';
 import { ListanewsComponent } from './listanews/listanews.component';
 import { MetroComponent } from './metro/metro.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { MetroComponent } from './metro/metro.component';
     MetroComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

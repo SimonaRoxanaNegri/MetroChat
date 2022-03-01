@@ -14,3 +14,13 @@
   <option value="1">Rosso</option>
   <option value="2">Blu</option>
 </select>
+
+<form style="margin-top: 20px;" (ngSubmit)="send()" [formGroup]="form">
+  <div style="margin-top: 10px;">
+    <input type="text" id="exampleInputUsername" placeholder="nome utente" formControlName="username">
+  </div>
+  <div style="margin-top: 10px;">
+    <input type="email" id="exampleInputEmail" placeholder="email" formControlName="email">
+  </div>
+  <button type="submit" style="margin-top: 10px;">Invia</button>
+</form>
