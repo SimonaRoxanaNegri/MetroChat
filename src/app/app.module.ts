@@ -8,6 +8,7 @@ import { MmssPipe } from './mmss.pipe';
 import { ListanewsComponent } from './listanews/listanews.component';
 import { MetroComponent } from './metro/metro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DettagliotrenoComponent } from './treni/dettagliotreno/dettagliotreno.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TreniComponent,
     MmssPipe,
     ListanewsComponent,
-    MetroComponent
+    MetroComponent,
+    DettagliotrenoComponent
   ],
   imports: [
     BrowserModule,

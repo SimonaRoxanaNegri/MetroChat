@@ -17,10 +17,11 @@
 
 <form style="margin-top: 20px;" (ngSubmit)="send()" [formGroup]="form">
   <div style="margin-top: 10px;">
-    <input type="text" id="exampleInputUsername" placeholder="nome utente" formControlName="username">
+    <input type="text" id="exampleInputUsername" (input)="checkUser()" placeholder="nome utente"
+      formControlName="username">
   </div>
   <div style="margin-top: 10px;">
-    <input type="email" id="exampleInputEmail" placeholder="email" formControlName="email">
+    <input type="email" id="exampleInputEmail" email="true" placeholder="email" formControlName="email">
   </div>
   <button type="submit" style="margin-top: 10px;">Invia</button>
 </form>

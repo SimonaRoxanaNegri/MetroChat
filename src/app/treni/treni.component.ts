@@ -1,6 +1,7 @@
-import { LISTAMETRO } from './../dati/metroremoti';
-import { Component, OnInit } from '@angular/core';
 import { Metro } from '../model/metro.model';
+import { Component, OnInit } from '@angular/core';
+import { LISTAMETRO } from './../dati/metroremoti';
+
 
 @Component({
   selector: 'ca-treni',
@@ -14,11 +15,18 @@ export class TreniComponent implements OnInit {
      { idt: 'BFD', linea: 'Gialla', numchatting: 47, tempo: 155000 }
    ]; */
   listametro: Metro[];
+  now;
+  trenoselezionato?: Metro;
   constructor() {
     this.listametro = [];
+    this.now = new Date().getTime();
   }
   ngOnInit() {
     this.listametro = LISTAMETRO;
   }
+  setMetro(t: Metro) {
+    this.trenoselezionato = t;
+  }
+
 }
 

@@ -12,7 +12,7 @@ export class ListanewsComponent {
 
   listanews: News[] = [];
   @Input() user?: string;
-  showHidden: boolean = false;
+  showHidden: boolean = true;
   today: Date;
   color: string;
   form: FormGroup;
@@ -57,11 +57,23 @@ export class ListanewsComponent {
     }
   }
 
+  checkUser() {
+    let user = this.form.controls['username'].value;
+    if (!(user.length >= 7)) {
+      this.form.controls['username'].setErrors({ incorrect: true })
+    } else {
+      this.form.controls['username'].setErrors(null);
+    }
+  }
+
   send(): void {
     if (!this.form.valid) {
       alert('compilare tutti i campi obbligatori!');
       return;
+    } else {
+      alert('Registrazione dei seguenti dati:' + '\n' + this.form.controls['username'].value
+        + '\n' + this.form.controls['email'].value + '\n avvenuta con successo!');
     }
-    alert('registrazione avvenuta con successo!')
   }
+
 }

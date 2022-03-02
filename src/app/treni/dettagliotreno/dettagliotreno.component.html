@@ -1,0 +1,6 @@
+<div #idDettaglio *ngIf="treno">
+  <h1>Dettaglio treno</h1>
+  <p>ID: {{treno.idt}}</p>
+  <p>Linea: {{treno.linea}}</p>
+  <button (click)="chiudiDettaglio()">Chiudi dettaglio</button>
+</div>

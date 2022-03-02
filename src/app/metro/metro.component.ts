@@ -9,8 +9,9 @@ import { Metro } from '../model/metro.model';
 export class MetroComponent implements OnInit {
   //proprietà dataIn come d'ingresso
   @Input() datiIn!: Metro;
-  constructor() {
+  @Input() ora?: number;
 
+  constructor() {
   }
   ngOnInit() {
 
