@@ -2,5 +2,6 @@
   <h1>Dettaglio treno</h1>
   <p>ID: {{treno.idt}}</p>
   <p>Linea: {{treno.linea}}</p>
-  <button (click)="chiudiDettaglio()">Chiudi dettaglio</button>
+  <button *ngIf="this.idDettaglio" (click)="chiudiDettaglio()">Chiudi
+    dettaglio</button>
 </div>

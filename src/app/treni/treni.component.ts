@@ -14,10 +14,12 @@ export class TreniComponent implements OnInit {
      { idt: 'AKE', linea: 'Verde', numchatting: 29, tempo: 145000 },
      { idt: 'BFD', linea: 'Gialla', numchatting: 47, tempo: 155000 }
    ]; */
+  trenipartiti: string;
   listametro: Metro[];
   now;
   trenoselezionato?: Metro;
   constructor() {
+    this.trenipartiti = '';
     this.listametro = [];
     this.now = new Date().getTime();
   }
@@ -26,6 +28,9 @@ export class TreniComponent implements OnInit {
   }
   setMetro(t: Metro) {
     this.trenoselezionato = t;
+  }
+  partiti(id: string) {
+    this.trenipartiti += "|" + id;
   }
 
 }

@@ -13,7 +13,11 @@ export class DettagliotrenoComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  chiudiDettaglio() {
-    this.idDettaglio.nativeElement.hidden = true;
+
+  chiudiDettaglio(): boolean {
+    let dettaglio = this.idDettaglio;
+    if (dettaglio)
+      dettaglio.nativeElement.hidden = true;
+    return dettaglio.nativeElement.hidden = true;
   }
 }
