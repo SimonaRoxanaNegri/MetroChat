@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { PopupComponent } from './popup/popup.component';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MetroChat';
   username = "Antonio";
+  @ViewChild(PopupComponent) msg!: PopupComponent;
+
+  mostroMsg() {
+    this.msg.mostraMsg();
+  }
 }

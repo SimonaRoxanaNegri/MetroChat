@@ -5,4 +5,7 @@
   <ca-treni></ca-treni>
   <ca-metro *ngFor=""></ca-metro>
   <ca-listanews [user]="username"></ca-listanews>
+  <ca-popup #pp>Messaggio in PopUp</ca-popup>
+  <button (click)="mostroMsg()">Mostro PopUp</button>
+  <p>Proprietà del componente figlio {{pp.mostramsg}}</p>
 </div>

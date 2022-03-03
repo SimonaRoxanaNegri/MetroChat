@@ -9,6 +9,7 @@ import { ListanewsComponent } from './listanews/listanews.component';
 import { MetroComponent } from './metro/metro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DettagliotrenoComponent } from './treni/dettagliotreno/dettagliotreno.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DettagliotrenoComponent } from './treni/dettagliotreno/dettagliotreno.c
     MmssPipe,
     ListanewsComponent,
     MetroComponent,
-    DettagliotrenoComponent
+    DettagliotrenoComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
