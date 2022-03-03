@@ -1,3 +1,5 @@
+<ca-menu></ca-menu>
+<h1>Treni in arrivo</h1>
 <p>{{trenipartiti}}</p>
 <div class="listatreni">
   <ca-metro *ngFor="let metro of listametro" (inPartenza)="partiti($event)" [datiIn]="metro" [ora]="now"
