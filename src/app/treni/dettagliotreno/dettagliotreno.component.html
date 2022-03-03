@@ -1,7 +1,14 @@
-<div #idDettaglio *ngIf="treno">
+<ca-menu></ca-menu>
+<h1>Dettaglio Treno</h1>
+<a routerLink='giallo'>{{trenogiallo}}</a>
+<a routerLink='rosso'>{{trenorosso}}</a>
+<router-outlet></router-outlet>
+
+
+<!-- <div #idDettaglio *ngIf="treno">
   <h1>Dettaglio treno</h1>
   <p>ID: {{treno.idt}}</p>
   <p>Linea: {{treno.linea}}</p>
   <button *ngIf="this.idDettaglio" (click)="chiudiDettaglio()">Chiudi
     dettaglio</button>
-</div>
+</div> -->

@@ -9,6 +9,9 @@ import { Metro } from 'src/app/model/metro.model';
 export class DettagliotrenoComponent implements OnInit {
   @Input() treno?: Metro;
   @ViewChild('idDettaglio') idDettaglio!: ElementRef;
+  trenogiallo: string = "Treno Giallo";
+  trenorosso: string = "Treno Rosso";
+
   constructor() {
   }
   ngOnInit(): void {

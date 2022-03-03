@@ -11,7 +11,7 @@ export class MenuComponent {
   link_menu2: string;
   link_menu3: string;
   constructor() {
-    this.link_menu1 = 'In Arrivo';
+    this.link_menu1 = 'In arrivo';
     this.link_menu2 = 'Preferiti';
     this.link_menu3 = 'Login';
   }
