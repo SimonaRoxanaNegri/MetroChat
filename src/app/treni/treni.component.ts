@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Metro } from '../model/metro.model';
 import { Component, OnInit } from '@angular/core';
 import { LISTAMETRO } from './../dati/metroremoti';
@@ -17,8 +18,8 @@ export class TreniComponent implements OnInit {
   trenipartiti: string;
   listametro: Metro[];
   now;
-  trenoselezionato?: Metro;
-  constructor() {
+  //trenoselezionato?: Metro;
+  constructor(private router: Router) {
     this.trenipartiti = '';
     this.listametro = [];
     this.now = new Date().getTime();
@@ -26,8 +27,8 @@ export class TreniComponent implements OnInit {
   ngOnInit() {
     this.listametro = LISTAMETRO;
   }
-  setMetro(t: Metro) {
-    this.trenoselezionato = t;
+  setMetro(id: string) {
+    this.router.navigate(['inarrivo/dettaglio', id]);
   }
   partiti(id: string) {
     this.trenipartiti += "|" + id;

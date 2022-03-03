@@ -17,6 +17,7 @@ import { PopupComponent } from './popup/popup.component';
 import { PreferitiComponent } from './preferiti/preferiti.component';
 import { LoginComponent } from './login/login.component';
 import { Error404Component } from './error404/error404.component';
+import { DettaglioComponent } from './treni/dettaglio/dettaglio.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { Error404Component } from './error404/error404.component';
     LoginComponent,
     Error404Component,
     TrenorossoComponent,
-    TrenogialloComponent
+    TrenogialloComponent,
+    DettaglioComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { Error404Component } from './error404/error404.component';
           { path: '', redirectTo: '/error', pathMatch: 'full' },
           { path: 'rosso', component: TrenorossoComponent },
           { path: 'giallo', component: TrenogialloComponent },
+          { path: ':id', component: DettaglioComponent }
         ]
       },
       { path: 'preferiti', component: PreferitiComponent },

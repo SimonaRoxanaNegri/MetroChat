@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Metro } from 'src/app/model/metro.model';
 
+
 @Component({
   selector: 'ca-dettagliotreno',
   templateUrl: './dettagliotreno.component.html',
@@ -17,10 +18,10 @@ export class DettagliotrenoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  chiudiDettaglio(): boolean {
-    let dettaglio = this.idDettaglio;
-    if (dettaglio)
-      dettaglio.nativeElement.hidden = true;
-    return dettaglio.nativeElement.hidden = true;
-  }
+  /*   chiudiDettaglio(): boolean {
+      let dettaglio = this.idDettaglio;
+      if (dettaglio)
+        dettaglio.nativeElement.hidden = true;
+      return dettaglio.nativeElement.hidden = true;
+    } */
 }
