@@ -1,6 +1,7 @@
 //import { Time } from '@angular/common';
-import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { Metro } from '../model/metro.model';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'ca-metro',

@@ -1,6 +1,5 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Metro } from 'src/app/model/metro.model';
-
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'ca-dettagliotreno',

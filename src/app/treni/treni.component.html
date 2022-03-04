@@ -5,11 +5,5 @@
   <ca-metro *ngFor="let metro of listametro" (inPartenza)="partiti($event)" [datiIn]="metro" [ora]="now"
     (click)="setMetro(metro.idt)">
   </ca-metro>
-  <!-- <ul>
-    <li *ngFor="let metro of listametro">
-      <h2>{{metro.linea}}</h2>
-      <p>ID: {{metro.idt}}</p>
-      <p>Partenza tra: {{metro.tempo}}</p>
-    </li>
-  </ul> -->
+  <div *ngIf="errormsg">{{errormsg}}</div>
 </div>

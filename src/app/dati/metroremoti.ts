@@ -1,4 +1,4 @@
-import { Metro } from './../model/metro.model';
+import { Metro } from '../model/metro.model';
 
 export const LISTAMETRO: Metro[] =
     [
