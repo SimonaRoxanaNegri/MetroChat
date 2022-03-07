@@ -16,6 +16,7 @@ import { MmssPipe } from './pipe/mmss.pipe';
 import { DettaglioComponent } from './treni/dettagliotreno/dettaglio/dettaglio.component';
 import { TrenorossoComponent } from './treni/dettagliotreno/trenorosso/trenorosso.component';
 import { TrenogialloComponent } from './treni/dettagliotreno/trenogiallo/trenogiallo.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { TrenogialloComponent } from './treni/dettagliotreno/trenogiallo/trenogi
     DettaglioComponent,
     TrenorossoComponent,
     TrenogialloComponent,
-    Error404Component
+    Error404Component,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

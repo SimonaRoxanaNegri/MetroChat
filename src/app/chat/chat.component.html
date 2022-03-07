@@ -1,0 +1,11 @@
+<p>{{msgIn.idu}}-{{msgIn.testo}}
+  <span *ngIf="msgIn.stato == '1' ; else show" (click)="setMsgPreferiti(msgIn.idm,0)">
+    <i class="material-icons on">favorite</i>
+  </span>
+  <ng-template #show>
+    <span (click)="setMsgPreferiti(msgIn.idm,1)">
+      <i class="material-icons">favorite_border</i>
+    </span>
+  </ng-template>
+</p>
+<p>{{errormsg}}</p>

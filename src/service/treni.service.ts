@@ -43,13 +43,22 @@ export class TreniService {
     return throwError(() => new Error(error.message) || error);
   }
 
+  getDettaglioMetro(idt: string): Metro {
+    var metro;
+    for (let i = 0; i < LISTAMETRO.length; i++) {
+      if (LISTAMETRO[i].idt == idt) {
+        metro = LISTAMETRO[i];
+        return metro
+      }
+    } return metro;
+  }
   /*   getPreferitiMetro(): Metro[] {
-      // recupero la lista dei preferiti
-      return;
-    }
+    // recupero la lista dei preferiti
+    return;
+  }
   
-    setPreferitiMetro(id: string): boolean {
-      // imposto la metro tra i preferiti
-      return;
-    } */
+  setPreferitiMetro(id: string): boolean {
+    // imposto la metro tra i preferiti
+    return;
+  } */
 }

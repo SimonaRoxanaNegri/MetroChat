@@ -4,6 +4,6 @@ export class Messaggio {
         public idt: string, //id del treno
         public idu: string, //id dell'utente
         public testo: string, //testo messaggio
-        public idd?: string) //orario del destinatario (opzionale)
-    { }
+        public idd?: string, //orario del destinatario (opzionale)
+        public stato?: string) { }
 }
