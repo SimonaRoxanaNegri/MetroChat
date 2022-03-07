@@ -1,0 +1,11 @@
+.navbar-custom {
+  background: var(--main_color);
+}
+
+.navbar-custom a {
+  color: rgb(247, 247, 247);
+}
+
+.navbar-custom a:hover {
+  color: rgb(236, 236, 236);
+}
