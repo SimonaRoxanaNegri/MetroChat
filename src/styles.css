@@ -24,4 +24,5 @@ p {
 
 :root {
   --main_color: linear-gradient(90deg, rgba(255, 38, 0, 1) 0%, rgba(255, 85, 0, 1) 35%, rgba(255, 145, 0, 1) 100%);
+  --second_color: rgba(255, 85, 0, 1);
 }

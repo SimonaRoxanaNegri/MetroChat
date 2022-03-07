@@ -1,0 +1,9 @@
+.container-metro {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.icon-treno,
+.icon-timer {
+  color: var(--second_color);
+}

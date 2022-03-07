@@ -1,8 +1,8 @@
 <h1>Treni in arrivo</h1>
 <p>{{trenipartiti}}</p>
 <div class="listatreni">
-  <ca-metro *ngFor="let metro of listametro" (inPartenza)="partiti($event)" [datiIn]="metro" [ora]="now"
-    (click)="setMetro(metro.idt)">
+  <!-- (inPartenza)="partiti($event)" -->
+  <ca-metro *ngFor="let metro of listametro" [datiIn]="metro" [ora]="now" (click)="setMetro(metro.idt)">
   </ca-metro>
   <div *ngIf="errormsg">{{errormsg}}</div>
 </div>
