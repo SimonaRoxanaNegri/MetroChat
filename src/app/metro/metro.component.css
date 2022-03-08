@@ -1,9 +1,13 @@
-.container-metro {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.icon-timer {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  position: relative;
+  color: var(--submain_color);
 }
 
-.icon-treno,
-.icon-timer {
-  color: var(--second_color);
+.icon-timer svg {
+  position: absolute;
+  top: 20%;
+  left: 20%;
 }
