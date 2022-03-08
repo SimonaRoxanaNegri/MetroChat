@@ -34,4 +34,5 @@ export class ChatComponent implements OnInit {
       },
         error => this.errormsg = error);
   }
+
 }

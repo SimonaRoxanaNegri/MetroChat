@@ -25,7 +25,7 @@ export class TreniService {
     return this.http.get<Metro[]>(this.apiGetUrl)
       .pipe(
         map(risposta => risposta['dati']),
-        tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
+        //tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
         catchError(this.handleErrorObs)
       );
   }
