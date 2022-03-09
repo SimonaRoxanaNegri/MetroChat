@@ -31,6 +31,6 @@ export class LoginComponent implements OnInit {
       risp => this.datiLogin = risp,
       error => this.errormsg = error
     );
-    console.log(dati)
+    //console.log(JSON.stringify(this.loginservice));
   }
 }

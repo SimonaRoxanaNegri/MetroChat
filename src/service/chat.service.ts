@@ -11,20 +11,14 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ChatService {
+
   private apiGetUrl = 'http://www.dcopelli.it/test/angular/chat/';
-  private apiPostUrl = 'http://www.dcopelli.it/test/angular/caht/send/';
+  private apiPostUrl = 'http://www.dcopelli.it/test/angular/chat/send/';
   private apiPreferitiUrl = 'http://www.dcopelli.it/test/angular/chat/send/preferiti/';
 
-  private headers: HttpHeaders = new HttpHeaders({});
+  private headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'text/plain' });
 
-  constructor(private http: HttpClient) {
-    this.headers.append('Content-Type', 'application/x-www-form-urlencoded'),
-      this.headers.append('Content-Type', 'application/json'),
-      this.headers.append('Access-Control-Allow-Headers', 'Content-Type'),
-      this.headers.append('Access-Control-Allow-Origin', '*'),
-      this.headers.append('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT'),
-      this.headers.append('Authorization', 'Bearer szdp79a2kz4wh4frjzuqu4sz6qeth8m3')
-  }
+  constructor(private http: HttpClient) { }
 
   getListaChat(): Messaggio[] {
     return LISTAMSG;
@@ -34,7 +28,9 @@ export class ChatService {
     const param = new HttpParams().set('idt', idt).set('idu', '99');
     return this.http.get<Messaggio[]>(
       this.apiGetUrl,
-      { params: param }
+      {
+        params: param
+      }
     ).pipe(
       map(risposta => risposta['dati']),
       //tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
@@ -48,18 +44,24 @@ export class ChatService {
         idtreno: obj.idt,
         idutente: obj.idu,
         messaggio: obj.testo,
-      })
+      },
+      {
+        headers: this.headers,
+        responseType: 'text' as 'json'
+      }
+    )
       .pipe(
         map(risposta => risposta['dati']),
-        //tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
+        tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
         catchError(this.handleErrorObs)
       );
   }
 
   setChatPreferiti(idu: string, idm: string, stato: number): Observable<Number> {
-    return this.http.put<Number>(this.apiPreferitiUrl, { idutente: idu, idmessaggio: idm, stato: stato })
+    return this.http.put<Number>(this.apiPreferitiUrl, { idutente: idu, idmessaggio: idm, stato: stato }, { responseType: 'text' as 'json' })
       .pipe(
         map(risposta => risposta['stato']),
+        tap(dati => console.log('Dati recuperati')),
         catchError(this.handleErrorObs)
       );
   }
