@@ -55,3 +55,19 @@ p {
   top: 20%;
   left: 20%;
 }
+
+.btn-custom {
+  background-color: var(--submain_color);
+  color: white;
+  padding: 5px 10px;
+  border: 2px solid var(--submain_color);
+  border-radius: 10px;
+  width: auto;
+}
+
+.btn-custom:hover {
+  color: var(--text_color);
+  transition: linear 0.2s;
+  background-color: transparent;
+  border: 2px solid var(--submain_color);
+}

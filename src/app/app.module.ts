@@ -17,6 +17,7 @@ import { DettaglioComponent } from './treni/dettagliotreno/dettaglio/dettaglio.c
 import { TrenorossoComponent } from './treni/dettagliotreno/trenorosso/trenorosso.component';
 import { TrenogialloComponent } from './treni/dettagliotreno/trenogiallo/trenogiallo.component';
 import { ChatComponent } from './chat/chat.component';
+import { FormiscrivitiComponent } from './formiscriviti/formiscriviti.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ChatComponent } from './chat/chat.component';
     TrenorossoComponent,
     TrenogialloComponent,
     Error404Component,
-    ChatComponent
+    ChatComponent,
+    FormiscrivitiComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { ChatComponent } from './chat/chat.component';
         ]
       },
       { path: 'preferiti', component: PreferitiComponent },
+      { path: 'registrazione', component: FormiscrivitiComponent },
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: '/inarrivo', pathMatch: 'full' },
       { path: 'error', component: Error404Component },

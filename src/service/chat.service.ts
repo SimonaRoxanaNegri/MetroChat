@@ -15,7 +15,16 @@ export class ChatService {
   private apiPostUrl = 'http://www.dcopelli.it/test/angular/caht/send/';
   private apiPreferitiUrl = 'http://www.dcopelli.it/test/angular/chat/send/preferiti/';
 
-  constructor(private http: HttpClient) { }
+  private headers: HttpHeaders = new HttpHeaders({});
+
+  constructor(private http: HttpClient) {
+    this.headers.append('Content-Type', 'application/x-www-form-urlencoded'),
+      this.headers.append('Content-Type', 'application/json'),
+      this.headers.append('Access-Control-Allow-Headers', 'Content-Type'),
+      this.headers.append('Access-Control-Allow-Origin', '*'),
+      this.headers.append('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT'),
+      this.headers.append('Authorization', 'Bearer szdp79a2kz4wh4frjzuqu4sz6qeth8m3')
+  }
 
   getListaChat(): Messaggio[] {
     return LISTAMSG;

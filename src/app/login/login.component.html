@@ -1,8 +1,15 @@
-<h1>Login App</h1>
-<form>
-  <label>Username</label>
-  <input type="text" name="username">
-  <label>Password</label>
-  <input type="password" name="password">
-  <button type="submit">Login</button>
+<h1>Login</h1>
+
+<form (ngSubmit)="login(nome.value,email.value)">
+  <div class="my-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input #nome type="text" name="nome" placeholder="il tuo nome" [(ngModel)]="nome_modello" class="form-control"
+      required>
+  </div>
+  <div class="my-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input #email type="email" name="email" placeholder="la tua e-mail" [(ngModel)]="email_modello" class="form-control"
+      required>
+  </div>
+  <button type="submit" class="btn-custom">Login</button>
 </form>
