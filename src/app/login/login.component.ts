@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
       'nome': nome,
       'email': email,
     };
-    //console.log(email, nome)
     this.sendLoginDataObservable(this.datiLogin);
   }
   sendLoginDataObservable(dati: Login) {
@@ -31,6 +30,5 @@ export class LoginComponent implements OnInit {
       risp => this.datiLogin = risp,
       error => this.errormsg = error
     );
-    //console.log(JSON.stringify(this.loginservice));
   }
 }
