@@ -20,15 +20,16 @@ export class ChatComponent implements OnInit {
 
   setMsgPreferiti(idm, newstato) {
     const statoprec = this.msgIn.stato;
+    //console.log(statoprec);
     this.msgIn.stato = newstato;
     this.chatservice.setChatPreferiti('99', idm, newstato)
       .subscribe(risp => {
-        if (risp != newstato) {
-          alert('Errore');
+        if (risp == newstato) {
+          //alert('Errore');
           // ritorno allo stato precedente
           this.msgIn.stato = statoprec;
         } else {
-          alert('Ok');
+          //alert('Ok');
           this.msgIn.stato = newstato
         }
       },

@@ -58,7 +58,16 @@ export class ChatService {
   }
 
   setChatPreferiti(idu: string, idm: string, stato: number): Observable<Number> {
-    return this.http.put<Number>(this.apiPreferitiUrl, { idutente: idu, idmessaggio: idm, stato: stato }, { responseType: 'text' as 'json' })
+    return this.http.put<Number>(this.apiPreferitiUrl,
+      {
+        idutente: idu,
+        idmessaggio: idm,
+        stato: stato
+      },
+      {
+        headers: this.headers,
+        responseType: 'text' as 'json'
+      })
       .pipe(
         map(risposta => risposta['stato']),
         tap(dati => console.log('Dati recuperati')),
