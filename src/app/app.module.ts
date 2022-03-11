@@ -52,7 +52,9 @@ import { FormiscrivitiComponent } from './formiscriviti/formiscriviti.component'
           { path: ':id', component: DettaglioComponent }
         ]
       },
-      { path: 'preferiti', component: PreferitiComponent },
+      {
+        path: 'preferiti', component: PreferitiComponent
+      },
       { path: 'registrazione', component: FormiscrivitiComponent },
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: '/inarrivo', pathMatch: 'full' },

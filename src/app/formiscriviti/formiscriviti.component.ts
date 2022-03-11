@@ -16,8 +16,8 @@ export class FormiscrivitiComponent implements OnInit {
 
   invio(form: NgForm) {
     alert("Tutto il form: " + JSON.stringify(form.value));
-    console.log("Nome inserito è: " + form.controls['nome'].value);
-    console.log("Email inserita è: " + form.controls['email'].value);
+    //console.log("Nome inserito è: " + form.controls['nome'].value);
+    //console.log("Email inserita è: " + form.controls['email'].value);
   }
 
 }

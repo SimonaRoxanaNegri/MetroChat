@@ -20,8 +20,12 @@
 
     <div class="col-sm-9"></div>
     <div class="d-flex-row col-12">
-      <ca-chat *ngFor="let chat of listachat" [msgIn]="chat">
-      </ca-chat>
+      <ca-chat *ngFor="let chat of listachat" [msgIn]="chat"></ca-chat>
+      <form>
+        <label for="messaggio" class="form-label my-3">Messaggio</label>
+        <input type="text" name="messaggio" class="form-control" #msg required>
+        <button class="btn-custom my-3" (click)="invioMsg(msg.value);msg.value=''">Invia</button>
+      </form>
     </div>
 
   </div>

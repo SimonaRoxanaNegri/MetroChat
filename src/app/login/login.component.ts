@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Login } from '../model/messaggio.model copy';
+import { Login } from '../model/login';
 import { LoginService } from 'src/service/login.service';
 @Component({
   selector: 'ca-login',

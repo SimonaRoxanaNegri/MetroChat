@@ -14,7 +14,6 @@ export class ChatComponent implements OnInit {
 
   constructor(private chatservice: ChatService) {
   }
-
   ngOnInit() {
   }
 
@@ -34,6 +33,22 @@ export class ChatComponent implements OnInit {
         }
       },
         error => this.errormsg = error);
+  }
+
+  deleteMsg(idm, idu, testo) {
+    if (confirm("Sei sicuro/a di eleminare il messaggio con id: " + idm +
+      " dell'utente con id: " + idu + '\n' + testo + "?")) {
+      this.chatservice.deleteChatMsgObservable(idm).subscribe(
+        res => {
+          this.msgIn = res;
+          return this.chatservice.getListaChatObservable;
+        },
+        error => {
+          this.errormsg = error;
+          console.log(this.errormsg);
+        }
+      );
+    }
   }
 
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Login } from 'src/app/model/messaggio.model copy';
+import { Login } from 'src/app/model/login';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';

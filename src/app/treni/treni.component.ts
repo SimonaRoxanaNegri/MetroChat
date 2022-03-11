@@ -22,7 +22,6 @@ export class TreniComponent implements OnInit {
   }
   ngOnInit() {
     this.getListaMetroObservable();
-    //this.listametro = this.treniservice.getListaMetro();
   }
 
   getListaMetroObservable() {

@@ -8,7 +8,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 })
 export class DettagliotrenoComponent implements OnInit {
   @Input() treno?: Metro;
-  @ViewChild('idDettaglio') idDettaglio!: ElementRef;
+  //@ViewChild('idDettaglio') idDettaglio: ElementRef;
   trenogiallo: string = "Treno Giallo";
   trenorosso: string = "Treno Rosso";
 
@@ -17,10 +17,4 @@ export class DettagliotrenoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*   chiudiDettaglio(): boolean {
-      let dettaglio = this.idDettaglio;
-      if (dettaglio)
-        dettaglio.nativeElement.hidden = true;
-      return dettaglio.nativeElement.hidden = true;
-    } */
 }

@@ -1,4 +1,9 @@
-<h1>Preferiti</h1>
-<!-- Lista preferiti -->
-<!-- <ca-msg *ngFor="let item of items"></ca-msg> -->
-<p>preferiti works!</p>
+<div>
+  <div class="row">
+    <h1>Preferiti</h1>
+    <div class="col-sm-12 d-flex">
+      <div class="d-flex-row col-12">
+        <ca-chat *ngFor="let chat of listachat" [msgIn]="chat"></ca-chat>
+      </div>
+    </div>
+  </div>

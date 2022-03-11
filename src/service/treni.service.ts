@@ -17,14 +17,14 @@ export class TreniService {
   // 3
   constructor(private http: HttpClient) { }
 
-  getListaMetro(): Metro[] {
-    return LISTAMETRO;
-  }
+  /*  getListaMetro(): Metro[] {
+     return LISTAMETRO;
+   } */
 
   getListaMetroObservable(): Observable<Metro[]> {
     return this.http.get<Metro[]>(this.apiGetUrl)
       .pipe(
-        map(risposta => risposta['dati']),
+        map(risposta => { /* console.log(risposta['dati']); */ return risposta['dati'] }),
         //tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
         catchError(this.handleErrorObs)
       );
@@ -37,6 +37,7 @@ export class TreniService {
         catchError(this.handleErrorObs)
       );
   }
+
 
   private handleErrorObs(error: any) {
     console.error('Si è verificato un errore', error);
