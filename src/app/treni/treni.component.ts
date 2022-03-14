@@ -14,7 +14,7 @@ export class TreniComponent implements OnInit {
   trenipartiti: string;
   now: number;
   errormsg;
-  //trenoselezionato?: Metro;
+
   constructor(private router: Router, private treniservice: TreniService) {
     this.trenipartiti = '';
     this.listametro = [];

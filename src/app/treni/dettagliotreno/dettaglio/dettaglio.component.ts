@@ -46,7 +46,7 @@ export class DettaglioComponent implements OnInit {
   getDettaglioMetro(idtr: string) {
     this.treno = this.treniservice.getDettaglioMetro(idtr);
   }
-  //costruisco l'oggetto messaggio
+
   invioMsg(testomsg: string) {
     this.chatmsg = {
       'idm': 0,
@@ -56,7 +56,7 @@ export class DettaglioComponent implements OnInit {
     };
     this.sendMsgObservable(this.chatmsg);
   }
-  //attesa di risposta dell'api con l'oggetto Messaggio
+
   sendMsgObservable(msg: Messaggio) {
     this.chatservice.sendChatMsgObservable(msg)
       .subscribe(
@@ -64,7 +64,5 @@ export class DettaglioComponent implements OnInit {
         error => this.errormsg = error
       );
   }
-
-
 
 }

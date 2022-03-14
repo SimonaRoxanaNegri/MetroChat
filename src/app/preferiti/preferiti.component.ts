@@ -23,7 +23,6 @@ export class PreferitiComponent implements OnInit {
 
   ngOnInit() {
     this.idutente = this.route.snapshot.paramMap.get('id');
-    // this.getDettaglioChatMsgListaPreferiti(this.idutente);
     this.getChatMsgListaPreferitiObservable();
   }
 
@@ -33,13 +32,5 @@ export class PreferitiComponent implements OnInit {
         risp => this.listachat = risp,
         error => this.errormsg = error);
   }
-
-  /*   getDettaglioChatMsgListaPreferiti(idu: string) {
-      this.chatservice.getDettaglioChatMsgListaPreferiti(idu)
-        .subscribe(
-          risp => this.msg = risp[0],
-          error => this.errormsg = error);
-    } */
-
 
 }

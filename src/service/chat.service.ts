@@ -29,7 +29,7 @@ export class ChatService {
         params: param
       }
     ).pipe(
-      map(risp => { console.log(risp['dati']); return risp['dati'] }),
+      map(risp => { return risp['dati'] }),
       //tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
       catchError(this.handleErrorObs)
     );
@@ -62,7 +62,7 @@ export class ChatService {
       })
       .pipe(
         map(risposta => risposta['dati']),
-        tap(dati => console.log('Dati recuperati')),
+        //tap(dati => console.log('Dati recuperati')),
         catchError(this.handleErrorObs)
       );
   }
@@ -105,16 +105,15 @@ export class ChatService {
 
   getChatMsgListaPreferiti(): Observable<Messaggio[]> {
     return this.http.get<Messaggio[]>(
-      'http://www.dcopelli.it/test/angular/chat/preferiti/' + '?idu=' + '99')
+      this.apiListaPreferitiUrl + '?idu=' + '99')
       .pipe(
-        map(risp => { console.log(risp['dati']); return risp['dati'] }),
+        map(risp => { return risp['dati'] }),
         //tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
         catchError(this.handleErrorObs)
       );
   }
 
   private handleErrorObs(error: any) {
-    console.error('Si è verificato un errore', error);
     return throwError(() => new Error(error.message) || error);
   }
 }

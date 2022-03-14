@@ -43,7 +43,6 @@ export class TreniService {
   }
 
   private handleErrorObs(error: any) {
-    console.error('Si è verificato un errore', error);
     return throwError(() => new Error(error.message) || error);
   }
 

@@ -1,5 +1,5 @@
 import { Metro } from 'src/app/model/metro.model';
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ca-dettagliotreno',
@@ -8,7 +8,6 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 })
 export class DettagliotrenoComponent implements OnInit {
   @Input() treno?: Metro;
-  //@ViewChild('idDettaglio') idDettaglio: ElementRef;
   trenogiallo: string = "Treno Giallo";
   trenorosso: string = "Treno Rosso";
 
