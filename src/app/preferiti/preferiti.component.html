@@ -1,8 +1,29 @@
 <div>
   <div class="row">
     <h1>Preferiti</h1>
-    <div class="col-sm-12 d-flex">
-      <div class="d-flex-row col-12">
+    <h4>Utente loggato: | <i>{{nomeUtente}}</i> |</h4>
+    <h5>La lista dei messaggi preferiti</h5>
+    <div class="col-12 justify-content-start">
+
+      <div class="col-12 d-flex cont-dettaglio-object" *ngIf="true">
+
+        <div class="photo-u-content col-sm-12 col-md-2">
+          <img class="img-fluid" src="assets/img/utente2.jpg" alt="utente">
+        </div>
+
+        <div class="d-flex-row px-3 col-12 col-md-3">
+          <p>Id: {{msg.idu}}</p>
+          <p>Nome: {{nomeUtente}}</p>
+          <p>Iscritta dal: {{dataIscrizione}}</p>
+        </div>
+
+        <div class="px-3 col-12 col-md-7">
+          <p>Biografia: {{bio}}</p>
+        </div>
+
+      </div>
+
+      <div class="col-12">
         <ca-chat *ngFor="let chat of listachat" [msgIn]="chat" [hidden]="!chat.idm"></ca-chat>
       </div>
     </div>

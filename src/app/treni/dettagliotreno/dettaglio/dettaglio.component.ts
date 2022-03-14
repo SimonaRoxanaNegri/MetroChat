@@ -11,6 +11,7 @@ import { ChatService } from 'src/service/chat.service';
   styleUrls: ['./dettaglio.component.css']
 })
 export class DettaglioComponent implements OnInit {
+
   idtreno: string;
   treno: Metro;
   errormsg;

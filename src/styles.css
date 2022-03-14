@@ -41,7 +41,7 @@ a:hover {
 }
 
 
-.container-metro {
+.cont-dettaglio-object {
   border: 1px solid rgba(51, 51, 51, 0.24);
   padding: 20px;
   align-items: center;
@@ -79,4 +79,30 @@ a:hover {
   transition: linear 0.2s;
   background-color: transparent;
   border: 2px solid var(--submain_color);
+}
+
+
+.photo-u-content {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.photo-u-content img {
+  width: auto;
+}
+
+
+@media (max-width:800px) {
+
+  .cont-dettaglio-object {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cont-dettaglio-object>div {
+    margin: 10px 0px;
+  }
 }
