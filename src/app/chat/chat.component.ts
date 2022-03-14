@@ -19,16 +19,12 @@ export class ChatComponent implements OnInit {
 
   setMsgPreferiti(idm, newstato) {
     const statoprec = this.msgIn.stato;
-    //console.log(statoprec);
     this.msgIn.stato = newstato;
     this.chatservice.setChatPreferiti('99', idm, newstato)
       .subscribe(risp => {
         if (risp == newstato) {
-          //alert('Errore');
-          // ritorno allo stato precedente
           this.msgIn.stato = statoprec;
         } else {
-          //alert('Ok');
           this.msgIn.stato = newstato
         }
       },
@@ -41,11 +37,10 @@ export class ChatComponent implements OnInit {
       this.chatservice.deleteChatMsgObservable(idm).subscribe(
         res => {
           this.msgIn = res;
-          return this.chatservice.getListaChatObservable;
+          this.chatservice.getListaChatObservable;
         },
         error => {
           this.errormsg = error;
-          console.log(this.errormsg);
         }
       );
     }

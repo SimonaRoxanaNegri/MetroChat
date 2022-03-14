@@ -4,5 +4,4 @@
   <!-- (inPartenza)="partiti($event)" -->
   <ca-metro *ngFor="let metro of listametro" [datiIn]="metro" [ora]="now" (click)="setMetro(metro.idt)">
   </ca-metro>
-  <div *ngIf="errormsg">{{errormsg}}</div>
 </div>

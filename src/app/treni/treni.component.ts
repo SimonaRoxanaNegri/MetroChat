@@ -27,7 +27,7 @@ export class TreniComponent implements OnInit {
   getListaMetroObservable() {
     this.treniservice.getListaMetroObservable()
       .subscribe(
-        p => this.listametro = p,
+        risp => this.listametro = risp,
         error => this.errormsg = error
       );
   }
