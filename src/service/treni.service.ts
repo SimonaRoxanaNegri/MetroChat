@@ -11,20 +11,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class TreniService {
 
-  // 2
   private apiGetUrl = 'http://www.dcopelli.it/test/angular/metro/';
 
-  // 3
   constructor(private http: HttpClient) { }
-
-  /*  getListaMetro(): Metro[] {
-     return LISTAMETRO;
-   } */
 
   getListaMetroObservable(): Observable<Metro[]> {
     return this.http.get<Metro[]>(this.apiGetUrl)
       .pipe(
-        map(risposta => { /* console.log(risposta['dati']); */ return risposta['dati'] }),
+        map(risposta => risposta['dati']),
         //tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
         catchError(this.handleErrorObs)
       );
@@ -38,12 +32,6 @@ export class TreniService {
       );
   }
 
-
-  private handleErrorObs(error: any) {
-    console.error('Si è verificato un errore', error);
-    return throwError(() => new Error(error.message) || error);
-  }
-
   getDettaglioMetro(idt: string): Metro {
     var metro;
     for (let i = 0; i < LISTAMETRO.length; i++) {
@@ -53,13 +41,10 @@ export class TreniService {
       }
     } return metro;
   }
-  /*   getPreferitiMetro(): Metro[] {
-    // recupero la lista dei preferiti
-    return;
+
+  private handleErrorObs(error: any) {
+    console.error('Si è verificato un errore', error);
+    return throwError(() => new Error(error.message) || error);
   }
-  
-  setPreferitiMetro(id: string): boolean {
-    // imposto la metro tra i preferiti
-    return;
-  } */
+
 }

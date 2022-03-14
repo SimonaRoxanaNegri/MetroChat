@@ -3,7 +3,7 @@
     <h1>Preferiti</h1>
     <div class="col-sm-12 d-flex">
       <div class="d-flex-row col-12">
-        <ca-chat *ngFor="let chat of listachat" [msgIn]="chat"></ca-chat>
+        <ca-chat *ngFor="let chat of listachat" [msgIn]="chat" [hidden]="!chat.idm"></ca-chat>
       </div>
     </div>
   </div>

@@ -9,13 +9,14 @@ import { NgForm } from '@angular/forms';
 export class FormiscrivitiComponent implements OnInit {
   nome_modello;
   email_modello;
+  password_modello;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   invio(form: NgForm) {
-    alert("Tutto il form: " + JSON.stringify(form.value));
+    alert("Registrazione effettuata con successo!");
     //console.log("Nome inserito è: " + form.controls['nome'].value);
     //console.log("Email inserita è: " + form.controls['email'].value);
   }

@@ -25,6 +25,15 @@ p {
   color: var(--text_color);
 }
 
+a {
+  color: var(--submain_color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--submain_color);
+}
+
 :root {
   --main_color: linear-gradient(90deg, rgba(255, 38, 0, 1) 0%, rgba(255, 85, 0, 1) 35%, rgba(255, 145, 0, 1) 100%);
   --submain_color: rgba(255, 145, 0, 1);

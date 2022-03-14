@@ -10,18 +10,19 @@ import { LoginService } from 'src/service/login.service';
 export class LoginComponent implements OnInit {
 
   nome_modello;
-  email_modello;
+  password_modello;
   datiLogin: Login;
+  registrazione: string = "Registrati";
   errormsg;
   constructor(private loginservice: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  login(nome: string, email: string) {
+  login(nome: string, password: string) {
     this.datiLogin = {
       'nome': nome,
-      'email': email,
+      'password': password
     };
     this.sendLoginDataObservable(this.datiLogin);
   }

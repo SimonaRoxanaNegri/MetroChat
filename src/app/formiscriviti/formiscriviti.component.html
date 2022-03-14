@@ -10,8 +10,10 @@
     <label for="email" class="form-label">E-mail</label>
     <input type="email" name="email" placeholder="la tua e-mail" [(ngModel)]="email_modello" class="form-control">
   </div>
+  <div class="my-3">
+    <label for="password" class="form-label">Password</label>
+    <input #password type="password" name="password" placeholder="la tua password" [(ngModel)]="password_modello"
+      class="form-control" autocomplete="on" required>
+  </div>
   <button type="submit" class="btn-custom">Registrati</button>
 </form>
-
-<p>stai scrivendo nel campo nome: {{nome_modello}}</p>
-<p>stai scrivendo nel campo email: {{email_modello}}</p>

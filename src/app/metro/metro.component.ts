@@ -14,24 +14,22 @@ export class MetroComponent implements OnInit {
   @Input() ora: number;
   @Output() inPartenza = new EventEmitter<string>();
 
-  //stato: Object;
   orapartenza: number;
   attesa: number;
 
-  constructor() {
-  }
+  constructor() { }
+
   ngOnInit() {
     //in millesecondi da Unix time
     this.orapartenza = this.datiIn.tempo;
-    //tempo mancante alla partenza
     this.attesa = this.orapartenza - this.ora;
+
     let interval = setInterval(() => {
       this.attesa -= 1000;
-      if (this.attesa <= 0) clearInterval(interval);  //blocco il timer e mando l'evento in uscita
-      /* //notifico il cambio di dato passando l'id del treno
-      this.inPartenza.emit(this.datiIn.idt);
-      modifico lo stato di visualizzazione del componente
-      this.stato = { 'display': 'none' }; */
+      if (this.attesa <= 0) {
+        clearInterval(interval);
+        this.attesa = 0;
+      }
     }, 1000);
   }
 }

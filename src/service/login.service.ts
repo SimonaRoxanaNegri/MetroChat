@@ -21,7 +21,7 @@ export class LoginService {
     return this.http.post<Login>(this.apiPostUrl,
       {
         nome: obj.nome,
-        email: obj.email,
+        password: obj.password,
       },
       {
         headers: this.headers,

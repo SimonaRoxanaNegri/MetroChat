@@ -4,7 +4,6 @@ import { Messaggio } from 'src/app/model/messaggio.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Metro } from 'src/app/model/metro.model';
 
 @Injectable({
   providedIn: 'root'
@@ -68,7 +67,6 @@ export class ChatService {
       );
   }
 
-  //invio dei dati Messaggio al server
   sendChatMsgObservable(obj: Messaggio): Observable<Messaggio> {
     return this.http.post<Messaggio[]>(this.apiPostUrl,
       {
@@ -106,26 +104,15 @@ export class ChatService {
   }
 
   getChatMsgListaPreferiti(): Observable<Messaggio[]> {
-
     return this.http.get<Messaggio[]>(
       'http://www.dcopelli.it/test/angular/chat/preferiti/' + '?idu=' + '99')
       .pipe(
         map(risp => { console.log(risp['dati']); return risp['dati'] }),
-        tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
+        //tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
         catchError(this.handleErrorObs)
       );
   }
 
-  /*   getDettaglioChatMsgListaPreferiti(idu: string): Observable<Messaggio> {
-      return this.http.get<Messaggio>(this.apiListaPreferitiUrl + '?idu=' + idu)
-        .pipe(
-          map(risp => { console.log(risp['dati']); return risp['dati'] }),
-          tap(dati => console.log('Dati recuperati')), // messaggio di verifica nella console
-          catchError(this.handleErrorObs)
-        );
-    }
-   */
-  // 5) GESTIONE DEGLI ERRORI COMUNICAZIONE via HTTP
   private handleErrorObs(error: any) {
     console.error('Si è verificato un errore', error);
     return throwError(() => new Error(error.message) || error);

@@ -1,16 +1,17 @@
 <h1>Login</h1>
 
-<form (ngSubmit)="login(nome.value,email.value)">
+<form (ngSubmit)="login(nome.value,password.value)">
   <div class="my-3">
     <label for="nome" class="form-label">Nome</label>
     <input #nome type="text" name="nome" placeholder="il tuo nome" [(ngModel)]="nome_modello" class="form-control"
       required>
   </div>
   <div class="my-3">
-    <label for="email" class="form-label">E-mail</label>
-    <input #email type="email" name="email" placeholder="la tua e-mail" [(ngModel)]="email_modello" class="form-control"
-      required>
+    <label for="password" class="form-label">Password</label>
+    <input #password type="password" name="password" placeholder="la tua password" [(ngModel)]="password_modello"
+      class="form-control" autocomplete="on" required>
   </div>
-  <button type="submit" class="btn-custom">Login</button>
-  <p>{{errormsg}}</p>
+  <p>Se non sei registrato/a, accedi a questa pagina: <a routerLink="/registrazione"> {{registrazione}} </a></p>
+  <button type="submit" class="btn-custom my-3">Login</button>
+
 </form>
