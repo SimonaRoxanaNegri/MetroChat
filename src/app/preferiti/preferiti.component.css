@@ -17,15 +17,3 @@
 .photo-u-content img {
   width: auto;
 }
-
-@media (max-width:800px) {
-
-  .cont-dettaglio-object {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cont-dettaglio-object>div {
-    margin: 10px 0px;
-  }
-}
