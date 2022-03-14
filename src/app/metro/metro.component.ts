@@ -9,7 +9,7 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./metro.component.css']
 })
 export class MetroComponent implements OnInit {
-  //proprietà dataIn come d'ingresso
+
   @Input() datiIn: Metro;
   @Input() ora: number;
   @Output() inPartenza = new EventEmitter<string>();
@@ -20,7 +20,6 @@ export class MetroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    //in millesecondi da Unix time
     this.orapartenza = this.datiIn.tempo;
     this.attesa = this.orapartenza - this.ora;
 
