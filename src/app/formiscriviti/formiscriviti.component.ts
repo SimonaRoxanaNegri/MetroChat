@@ -7,16 +7,19 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./formiscriviti.component.css']
 })
 export class FormiscrivitiComponent implements OnInit {
+
   nome_modello;
   email_modello;
   password_modello;
+  isShown: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   invio(form: NgForm) {
-    alert("Registrazione effettuata con successo!");
+    this.isShown = !this.isShown;
     //console.log("Nome inserito è: " + form.controls['nome'].value);
     //console.log("Email inserita è: " + form.controls['email'].value);
   }

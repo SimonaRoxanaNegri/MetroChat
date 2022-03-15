@@ -1,6 +1,9 @@
 <h1>Login</h1>
 
 <form (ngSubmit)="login(nome.value,password.value)">
+  <div *ngIf="isShown" class="alert alert-success my-3" role="alert">
+    Login avvenuto con successo!
+  </div>
   <div class="my-3">
     <label for="nome" class="form-label">Nome</label>
     <input #nome type="text" name="nome" placeholder="il tuo nome" [(ngModel)]="nome_modello" class="form-control"

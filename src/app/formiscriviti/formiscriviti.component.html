@@ -2,6 +2,11 @@
 <h4>Inserisci i tuoi dati per iscriverti alla nostra app MetroChat</h4>
 
 <form #mioform="ngForm" (ngSubmit)="invio(mioform)">
+
+  <div *ngIf="isShown" class="alert alert-success my-3" role="alert">
+    Registrazione avvenuta con successo!
+  </div>
+
   <div class="my-3">
     <label for="nome" class="form-label">Nome</label>
     <input type="text" name="nome" placeholder="il tuo nome" [(ngModel)]="nome_modello" class="form-control">

@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   datiLogin: Login;
   registrazione: string = "Registrati";
   errormsg;
+  isShown: boolean = false;
+
   constructor(private loginservice: LoginService) { }
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class LoginComponent implements OnInit {
       'password': password
     };
     this.sendLoginDataObservable(this.datiLogin);
+    this.isShown = !this.isShown;
   }
   sendLoginDataObservable(dati: Login) {
     this.loginservice.sendLoginDataObservable(dati).subscribe(
