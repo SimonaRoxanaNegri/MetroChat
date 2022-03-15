@@ -11,6 +11,7 @@ export class ChatComponent implements OnInit {
 
   @Input() msgIn: Messaggio;
   errormsg;
+  isShown: boolean = false;
 
   constructor(private chatservice: ChatService) {
   }
@@ -26,6 +27,7 @@ export class ChatComponent implements OnInit {
           this.msgIn.stato = statoprec;
         } else {
           this.msgIn.stato = newstato
+          this.isShown = !this.isShown;
         }
       },
         error => this.errormsg = error);
